@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.6.2-cudnn8-devel-ubuntu20.04
+FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04
 
 ENV TZ=Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -26,21 +26,19 @@ RUN apt install -y --no-install-recommends \
     procps \
     subversion
 ENV PATH /opt/conda/bin:$PATH
-ARG CONDA_VERSION=py39_4.10.3
+# set version(Filename) and proper sha256(SHA256) from https://repo.anaconda.com/miniconda/
+ARG CONDA_VERSION=py39_24.3.0-0
 RUN set -x && \
     UNAME_M="$(uname -m)" && \
     if [ "${UNAME_M}" = "x86_64" ]; then \
     MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh"; \
-    SHA256SUM="1ea2f885b4dbc3098662845560bc64271eb17085387a70c2ba3f29fff6f8d52f"; \
+    SHA256SUM="1c3d44e987dc56c7d8954419fa1a078be5ddbc293d8cb98b184a23f9a270faad"; \
     elif [ "${UNAME_M}" = "s390x" ]; then \
     MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-${CONDA_VERSION}-Linux-s390x.sh"; \
-    SHA256SUM="1faed9abecf4a4ddd4e0d8891fc2cdaa3394c51e877af14ad6b9d4aadb4e90d8"; \
+    SHA256SUM="1570e27adba2dcc24b182c21cd4e793ab5719aa5b1f7f8e29c16ec74d6d9a16f"; \
     elif [ "${UNAME_M}" = "aarch64" ]; then \
     MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-${CONDA_VERSION}-Linux-aarch64.sh"; \
-    SHA256SUM="4879820a10718743f945d88ef142c3a4b30dfc8e448d1ca08e019586374b773f"; \
-    elif [ "${UNAME_M}" = "ppc64le" ]; then \
-    MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-${CONDA_VERSION}-Linux-ppc64le.sh"; \
-    SHA256SUM="fa92ee4773611f58ed9333f977d32bbb64769292f605d518732183be1f3321fa"; \
+    SHA256SUM="860f532a33501cf0eccc2677048e21db4a12151938d181821af3e5d30e2dc390"; \
     fi && \
     wget "${MINICONDA_URL}" -O miniconda.sh -q && \
     echo "${SHA256SUM} miniconda.sh" > shasum && \
