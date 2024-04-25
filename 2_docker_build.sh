@@ -1,0 +1,1 @@
+docker build -t sangjune_dmtet:11.8.0 . # NOTE: '.'
