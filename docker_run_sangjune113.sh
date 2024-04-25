@@ -11,4 +11,4 @@ docker run --gpus all -id \
 -p 28222:22 \
 -p 28288:8888 \
 -p 28289:8889 \
-f1.unist.info:443/jjuke_113:0.0.3
+sangjune113:11.3.0
