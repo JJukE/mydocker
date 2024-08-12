@@ -1,4 +1,5 @@
 docker run --gpus all -id \
+--security-opt=no-new-privileges \
 --name sangjune_DMTet_118 \
 -v /data/rvi/dataset/:/root/dataset \
 -v /data/sangjune:/root/dataset_sj \
