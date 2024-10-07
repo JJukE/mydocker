@@ -1,0 +1,16 @@
+conda create -n [env_name] python=3.9 -y
+conda install -c pytorch -c nvidia pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=12.1 -y
+conda install -c conda-forge accelerate transformers diffusers peft datasets -y
+conda install -c conda-forge einops wandb jupyterlab==3.6.5 ipykernel ipywidgets gpustat -y
+
+python -m ipykernel install --user --name [env_name] --display-name "[env_name]"
+jupyter lab --generate-config
+jupyter lab password # set password
+wandb login # login
+git config --global user.name "[git_user_nickname]"
+git config --global user.email "[git_email]"
+
+pip uninstall iopath fvcore
+conda install -c conda-forge -c iopath -c fvcore fvcore iopath -y
+pip install "git+https://github.com/facebookresearch/pytorch3d.git@V0.7.8"
+

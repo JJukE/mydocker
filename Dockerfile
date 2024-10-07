@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu20.04
+FROM nvidia/cuda:12.1.0-cudnn8-devel-ubuntu20.04
 
 ENV TZ=Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -61,10 +61,6 @@ RUN apt install -y libpam-pwquality
 
 # libraries
 RUN apt install bash-completion
-
-# xcb, qt5 for workstation gui
-RUN apt-get install xcb -y
-RUN apt-get install qt5-default -y
 
 RUN echo 'PASS_MIN_LEN 8' >> /etc/login.defs
 RUN echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config

@@ -1,1 +1,1 @@
-docker build -t sangjune118:11.8.0 . # NOTE: '.'
+docker build -t sangjune:12.1.0 . # NOTE: '.'
