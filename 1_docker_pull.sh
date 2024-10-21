@@ -1,1 +1,0 @@
-docker pull nvidia/cuda:12.1.0-cudnn8-devel-ubuntu20.04 # find CUDA version at https://hub.docker.com/r/nvidia/cuda/tags

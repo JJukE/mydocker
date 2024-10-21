@@ -1,1 +1,0 @@
-docker build -t sangjune:12.1.0 . # NOTE: '.'
