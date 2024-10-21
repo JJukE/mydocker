@@ -5,27 +5,30 @@ General-purpose processing for (1) docker image pulling, (2) docker building, (3
 1. Pull a docker image
 
 ```bash
-sh 1_docker_pull.sh
+sh docker_pull.sh
 ```
 
-Modify the image name of the file with proper CUDA and Ubuntu version at [dockerhub_nvidia](https://hub.docker.com/r/nvidia/cuda/tags).
+Specify the image name to the proper CUDA and Ubuntu version you want at [dockerhub_nvidia](https://hub.docker.com/r/nvidia/cuda/tags).
+- IMG_NVDA: Name of the NVIDIA image
 
 2. Build the image
 
 ```bash
-sh 2_docker_build.sh
+sh docker_build.sh
 ```
 
-Modify your image name to be built and the first line of the [Dockerfile](./Dockerfile) to the image you pulled above.
+Specify your image name and build the image using the nvidia image via [Dockerfile](./Dockerfile).
+- IMG_NVDA: Name of the NVIDIA image which you pulled above
+- IMG_NAME: Name of your image to be built
 
 3. Docker run
 
 ```bash
-sh 3_docker_run.sh
-sh 3_docker_run_x11.sh # if you use x11 forwarding
+sh docker_run.sh
+sh docker_run_x11.sh # if you use x11 forwarding
 ```
 
-Modify your preference with the environment variables:
+Specify your preference with the environment variables:
 - CONT_NAME: Name of the container to be created
 - VOL_RVI: Linking the lab dataset folder of the storage server to the specificed container path
 - VOL_MINE: Linking your dataset folder of the storage server to the specificed container path
@@ -34,5 +37,5 @@ Modify your preference with the environment variables:
 - PORT_SSH: Port number of the SSH (22)
 - PORT_JUP: The first port number of the jupyter (8888)
 - PORT_JUP_: The second port number of the jupyter (8889)
-- IMAGE_NAME: Name of the image
+- IMG_NAME: Name of the image
 
