@@ -37,5 +37,5 @@ Specify your preference with the environment variables:
 - PORT_SSH: Port number of the SSH (22)
 - PORT_JUP: The first port number of the jupyter (8888)
 - PORT_JUP_: The second port number of the jupyter (8889)
-- IMG_NAME: Name of the image
+- IMG_NAME: Name of the image you built above
 
