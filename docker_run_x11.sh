@@ -12,4 +12,4 @@ docker run --gpus all -id \
 -p $PORT_SSH:22 \
 -p $PORT_JUP:8888 \
 -p $PORT_JUP_:8889 \
-$IMAGE_NAME
+$IMG_NAME
