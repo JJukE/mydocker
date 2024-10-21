@@ -16,7 +16,7 @@ Modify the image name of the file with proper CUDA and Ubuntu version at [docker
 sh 2_docker_build.sh
 ```
 
-Modify your image name of the file
+Modify your image name to be built and the first line of the [Dockerfile](./Dockerfile) to the image you pulled above.
 
 3. Docker run
 
