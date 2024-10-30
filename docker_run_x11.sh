@@ -1,9 +1,11 @@
 docker run --gpus all -id \
 --security-opt=no-new-privileges \
---name sangjune_DMTet_118 \
+--name $CONT_NAME \
 -v $VOL_RVI \
 -v $VOL_MINE \
 -v $VOL_DEV \
+-v $VOL_HDD \
+-v $VOL_HDD_ \
 -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
 -e DISPLAY=unix$DISPLAY \
 --ipc host \
