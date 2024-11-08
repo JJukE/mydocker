@@ -9,7 +9,7 @@ sh docker_pull.sh
 ```
 
 Specify the image name to the proper CUDA and Ubuntu version you want at [dockerhub_nvidia](https://hub.docker.com/r/nvidia/cuda/tags).
-- IMG_NVDA: Name of the NVIDIA image
+- IMG_NVDA: Name of the docker image by NVIDIA
 
 ### 2. Build the image
 
@@ -18,7 +18,7 @@ sh docker_build.sh
 ```
 
 Specify your image name and build the image using the nvidia image via [Dockerfile](./Dockerfile).
-- IMG_NVDA: Name of the NVIDIA image which you pulled above
+- IMG_NVDA: Name of the docker image by NVIDIA which you pulled above
 - IMG_NAME: Name of your image to be built
 
 ### 3. Docker run
