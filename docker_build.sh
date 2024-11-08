@@ -1,1 +1,1 @@
-docker build -t $IMG_NAME . # NOTE: '.'
+docker build --build-arg IMG_NVDA=$IMG_NVDA -t $IMG_NAME . # NOTE: '.'

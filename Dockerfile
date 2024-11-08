@@ -1,4 +1,5 @@
-FROM $IMG_NVDA
+ARG IMG_NVDA=""
+FROM ${IMG_NVDA}
 
 ENV TZ=Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
