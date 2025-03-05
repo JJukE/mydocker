@@ -1,8 +1,11 @@
 docker run --gpus all -id \
 --security-opt=no-new-privileges \
 --name $CONT_NAME \
+-v $VOL_DATA \
 -v $VOL_RVI \
 -v $VOL_MINE \
+-v $VOL_RVI2 \
+-v $VOL_MINE2 \
 -v $VOL_DEV \
 --ipc host \
 --restart unless-stopped \
