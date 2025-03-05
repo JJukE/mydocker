@@ -30,8 +30,9 @@ sh docker_run_x11.sh # if you use x11 forwarding
 
 Specify your preference with the environment variables:
 - CONT_NAME: Name of the container to be created
-- VOL_RVI: Linking the lab dataset folder of the storage server to the specificed container path
-- VOL_MINE: Linking your dataset folder of the storage server to the specificed container path
+- VOL_DATA: Linking any path to dataset for training (maybe different to each server)
+- VOL_RVI, VOL_RVI2: Linking the lab dataset folder of the storage server to the specificed container path
+- VOL_MINE, VOL_MINE2: Linking your dataset folder of the storage server to the specificed container path
 - VOL_DEV: Linking your dev folder of the node to the specificed container path
 - PORT_TB: Port number of the Tensorboard (6006)
 - PORT_SSH: Port number of the SSH (22)
