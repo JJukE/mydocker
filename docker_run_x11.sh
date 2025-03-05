@@ -6,8 +6,8 @@ docker run --gpus all -id \
 -v $VOL_RVI2 \
 -v $VOL_MINE2 \
 -v $VOL_DEV \
+-v $VOL_DATA \
 -v $VOL_HDD \
--v $VOL_HDD_ \
 -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
 -e DISPLAY=unix$DISPLAY \
 --ipc host \
