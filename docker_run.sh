@@ -6,6 +6,7 @@ docker run --gpus all -id \
 -v $VOL_MINE \
 -v $VOL_RVI2 \
 -v $VOL_MINE2 \
+-v $VOL_MINE3 \
 -v $VOL_DEV \
 --ipc host \
 --restart unless-stopped \
