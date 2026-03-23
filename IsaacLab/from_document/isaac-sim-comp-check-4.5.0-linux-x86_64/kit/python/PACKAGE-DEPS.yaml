@@ -1,0 +1,77 @@
+bzip2:
+  licenseFile: bzip2-LICENSE.txt
+  packageName: bzip2
+  packageType: packman
+  source:
+    branch: merge-request
+    change: f323796e566d06e1b7479ac7b748c244c79539d5
+    path: https://gitlab/omniverse/externals/bzip2-build.git
+    scm: git
+  swipat: '3157491'
+  version: 1.0.8+nv3-linux-x86_64
+libffi:
+  licenseFile: libffi-LICENSE.txt
+  packageName: libffi
+  packageType: packman
+  source:
+    branch: merge-request
+    change: 674dacf685767330a9d0e9c32c5814cd3e651862
+    path: https://gitlab/omniverse/externals/libffi-build.git
+    scm: git
+  swipat: http://nvbugs/3217408
+  version: 3.4.2+nv1-linux-x86_64
+openssl:
+  licenseFile: openssl-LICENSE.txt
+  packageName: openssl
+  packageType: packman
+  source:
+    branch: main
+    change: 5a1152dba2e52cf4b2f87870ffa4805a39fb6d9d
+    path: https://gitlab/omniverse/externals/conan-transition.git
+    scm: git
+  swipat: '2820294'
+  version: 3.0.15-0-linux-x86_64-static-release
+pip:
+  licenseFile: pip-LICENSE.txt
+  packageName: pip
+  packageType: packman
+  source:
+    branch: merge-request
+    change: 709f91b46bce2821dc872443efddfa2b267fbc2e
+    path: https://gitlab/omniverse/externals/pip-build.git
+    scm: git
+  swipat: '4614357'
+  version: 24.0+nv1
+sqlite:
+  licenseFile: sqlite-LICENSE.txt
+  packageName: sqlite
+  packageType: packman
+  source:
+    branch: merge-request
+    change: e5d7c5d051a1f7b168343846591d13349260808b
+    path: https://gitlab/omniverse/externals/sqlite-build.git
+    scm: git
+  swipat: '3153700'
+  version: 3.46.1+nv1-linux-x86_64
+xz:
+  licenseFile: xz-LICENSE.txt
+  packageName: xz
+  packageType: packman
+  source:
+    branch: merge-request
+    change: 9ad0a8f941ebe0e6610bf8a761cd9de4d459a92b
+    path: https://gitlab/omniverse/externals/xz-build.git
+    scm: git
+  swipat: '3381177'
+  version: 5.4.6+nv1-linux-x86_64
+zlib:
+  licenseFile: zlib-LICENSE.txt
+  packageName: zlib
+  packageType: packman
+  source:
+    branch: main
+    change: 0e5b9a9db472d2b4b1d89060998caa2f63ee95f0
+    path: https://gitlab/omniverse/externals/conan-transition.git
+    scm: git
+  swipat: '2550776'
+  version: 1.3.1-0-linux-x86_64-static-release

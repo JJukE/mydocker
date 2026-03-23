@@ -1,0 +1,19 @@
+
+[package]
+    archivePath = "http://d4i3qtqj3r0z5.cloudfront.net/omni.client-cb647143e3837670.zip"
+
+    [package.publish]
+        kitVersion = "106.5.0+release.162063.eef547af.gl"
+        date = 1734047727
+        buildNumber = "106.5.0+release.162063.eef547af.gl"
+
+    [package.target]
+
+        [package.target.config]
+            0 = "release"
+
+        [package.target.platform]
+            0 = "linux-x86_64"
+
+        [package.target.kitHash]
+            0 = "d02c707b"

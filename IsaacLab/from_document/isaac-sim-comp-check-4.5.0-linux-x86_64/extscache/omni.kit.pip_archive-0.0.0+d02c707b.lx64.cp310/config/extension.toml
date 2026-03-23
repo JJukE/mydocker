@@ -1,0 +1,37 @@
+[package]
+title = "Pip Archive"
+category = "Internal"
+description = "Bundles common 3rd party pip packages used by many extensions in Kit"
+keywords = ["kit", "pip", "package"]
+support_level = "Core"
+
+# Many pip packages are platform specific
+writeTarget.config = false
+writeTarget.platform = true
+writeTarget.python = true
+
+[core]
+# Load as early as possible
+order = -1000
+reloadable = false
+
+[dependencies]
+"omni.kit.pipapi" = {} # We need it so that we can use [python.pipapi].
+
+# We bundle not only "toml" package, but many other. No need to mention all of them, just importing one will add whole
+# folder (pip_prebundle) to sys.path.
+[[python.module]]
+path = "pip_prebundle"
+
+# That is empty module, added here only to make tests discoverable in test run
+[[python.module]]
+name = "omni.kit.pip_archive"
+
+[python.pipapi]
+# https://pip.pypa.io/en/stable/reference/pip_install/#requirements-file-format
+requirements = []
+
+
+[[test]]
+# This extension brings pip packages. They are obviously tested in their own repos.
+pyCoverageThreshold = 20

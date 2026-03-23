@@ -1,0 +1,73 @@
+[package]
+title = "Isaac Sim Compatibility Checker App"
+description = "App for checking system requirements and compatibility"
+version = "4.5.0"
+
+# that makes it browsable in UI with "experience" filter
+keywords = ["app", "isaac-sim", "compatibility"]
+
+[dependencies]
+"omni.ui" = {}
+"omni.kit.uiapp" = {}
+"omni.kit.telemetry" = {}
+"omni.isaac.compatibility_check" = {}
+
+[settings]
+# app
+app.window.title = "Isaac Sim Compatibility Checker App"
+app.name = "Isaac-Sim_Compatibility_Checker"
+app.version = "4.5.0"
+
+# Kit Mini App
+app.extensions.enabledCore = []
+app.settings.persistent = true
+app.settings.standalone_mode = true
+
+# app update rate
+app.runLoops.main.rateLimitEnabled = true
+app.runLoops.main.rateLimitFrequency = 60
+app.runLoops.main.rateLimitUseBusyLoop = false
+
+# window size
+app.window.width = 500
+app.window.height = 530
+app.window.noResize = true
+
+# window center position
+app.window.x = -1
+app.window.y = -1
+
+# window icon
+# app.window._iconSize = 256
+# app.window.iconPath = "${app}/../exts/omni.isaac.compatibility_check/data/app/omni.isaac.sim.ico"
+
+# window properties
+app.window.fullscreen = false
+app.window.noDecorations = false
+app.window.alwaysOnTop = false
+app.window.scaleToMonitor = true
+
+# exit faster
+app.fastShutdown = true
+
+# extensionn settings
+exts."omni.kit.renderer.core".parallelStartup.enabled = false
+
+[settings.app.exts]
+folders = ["${app}/../exts", "${app}/../extscache"]
+
+
+########################################################################################################################
+# BEGIN GENERATED PART (Remove from 'BEGIN' to 'END' to regenerate)
+########################################################################################################################
+
+# Kit SDK Version: 106.0.0+release.150235.1f3a71ae.tc
+
+# Version lock for all dependencies:
+[settings.app.exts]
+enabled = [
+]
+
+########################################################################################################################
+# END GENERATED PART
+########################################################################################################################

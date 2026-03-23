@@ -1,0 +1,54 @@
+[core]
+reloadable = true
+order = 0
+
+[package]
+version = "0.1.2"
+category = "Utility"
+title = "Isaac Sim compatibility check"
+description = "Tool for checking system Isaac Sim requirements and compatibility"
+authors = ["NVIDIA"]
+repository = ""
+keywords = ["extension"]
+changelog = "docs/CHANGELOG.md"
+readme = "docs/README.md"
+preview_image = "data/preview.png"
+icon = "data/icon.png"
+
+[dependencies]
+"omni.gpu_foundation" = { }
+"omni.kit.renderer.core" = { }
+"omni.ui" = { optional = true }
+"omni.kit.uiapp" = { optional = true }
+
+[[python.module]]
+name = "omni.isaac.compatibility_check"
+
+[[native.plugin]]
+path = "bin/*.plugin"
+
+[settings]
+# GPU: driver version
+exts."omni.isaac.compatibility_check".gpu_driver = [
+    { platform = "linux", minimum = "535.129", unsupported = [] },
+    { platform = "win32", minimum = "537.58", unsupported = [] },
+]
+# GPU: VRAM (GB)
+exts."omni.isaac.compatibility_check".gpu_vram = { minimum = 8, good = 10, ideal = 48 }
+# CPU: cores
+exts."omni.isaac.compatibility_check".cpu_cores = { minimum = 4, good = 8, ideal = 16 }
+# RAM (GB)
+exts."omni.isaac.compatibility_check".ram = { minimum = 32, good = 64, ideal = 128 }
+# available storage (GB)
+exts."omni.isaac.compatibility_check".storage = { minimum = 50, good = 500, ideal = 1000 }
+# OS
+exts."omni.isaac.compatibility_check".operating_system = [
+    { name = "ubuntu", versions = ["20.04", "22.04"] },
+    { name = "windows", versions = ["10", "11"] },
+]
+# test kit app (relative to 'kit' folder)
+exts."omni.isaac.compatibility_check".test_kit_app = "omni.app.mini"
+exts."omni.isaac.compatibility_check".test_kit_args = [
+    "--/app/quitAfter=100",
+    "--no-window",
+]

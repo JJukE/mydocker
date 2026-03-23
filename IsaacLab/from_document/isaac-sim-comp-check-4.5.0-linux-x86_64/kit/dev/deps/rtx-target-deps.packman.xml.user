@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project toolsVersion="5.6">
+  <dependency name="rtx_plugins.release" linkPath="../_build/target-deps/rtx_plugins.release">
+    <package name="rtx_plugins.release" version="106.5.0+release.162519.d02c707b.gl.linux-x86_64-rendering-nv-usd_22.11_3.10-ecb45f0f91" />
+  </dependency>
+  <dependency name="rtx_plugins" linkPath="../_build/target-deps/rtx_plugins">
+    <package name="rtx_plugins" version="106.5.0+release.162519.d02c707b.gl.linux-x86_64-rendering-nv-usd_22.11_3.10-ecb45f0f91" />
+  </dependency>
+</project>

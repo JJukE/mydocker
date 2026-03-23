@@ -1,0 +1,76 @@
+// Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved.
+//
+// NVIDIA CORPORATION and its licensors retain all intellectual property
+// and proprietary rights in and to this software, related documentation
+// and any modifications thereto.  Any use, reproduction, disclosure or
+// distribution of this software and related documentation without an express
+// license agreement from NVIDIA CORPORATION is strictly prohibited.
+
+// Revision 4
+mdl 1.8;
+
+import UsdPreviewSurface::*;
+
+
+export material UsdPreviewSurface_NV
+(
+    float3 diffuseColor = float3(0.18f),
+
+    float3 emissiveColor = float3(0.0f),
+
+    uniform float emissiveScale = 1133.6,
+
+    uniform int useSpecularWorkflow = 0,
+
+    float3 specularColor = float3(0.0f),
+
+    float metallic = 0,
+
+    float roughness = 0.5,
+
+    float clearcoat = 0,
+
+    float clearcoatRoughness = 0.01,
+
+    float opacity = 1.0,
+
+    uniform float opacityThreshold = 0.0,
+
+    uniform bool enable_opacity = false,
+
+    uniform bool enable_specular_transmission = false,
+
+    uniform float ior = 1.5,
+
+    float3 normal = float3(0.0, 0.0, 1.0),
+
+    float displacement = 0.0,
+
+    float occlusion = 1.0
+) = let {
+    material base = UsdPreviewSurface::UsdPreviewSurface (
+        diffuseColor: color(diffuseColor),
+        emissiveColor: color(emissiveColor),
+        emissiveScale: emissiveScale,
+        useSpecularWorkflow: useSpecularWorkflow,
+        specularColor: color(specularColor),
+        metallic: metallic,
+        roughness: roughness,
+        clearcoat: clearcoat,
+        clearcoatRoughness: clearcoatRoughness,
+        opacity: opacity,
+        opacityThreshold: opacityThreshold,
+        enable_opacity: enable_opacity,
+        enable_specular_transmission: enable_specular_transmission,
+        ior: ior,
+        normal: normal,
+        displacement: displacement,
+        occlusion: occlusion
+    );
+
+} in material (
+    ior: base.ior,
+    surface:  base.surface,
+    backface: base.surface,
+    geometry: base.geometry
+);

@@ -1,0 +1,19 @@
+
+[package]
+    archivePath = "http://d4i3qtqj3r0z5.cloudfront.net/omni.kit.renderer.init-4d3bc96e58ec28cf.zip"
+
+    [package.publish]
+        kitVersion = "107.0.3+master.160776.3018bbf9.gl"
+        date = 1734048010
+        buildNumber = "107.0.3+master.160776.3018bbf9.gl"
+
+    [package.target]
+
+        [package.target.config]
+            0 = "release"
+
+        [package.target.platform]
+            0 = "linux-x86_64"
+
+        [package.target.kitHash]
+            0 = "d02c707b"

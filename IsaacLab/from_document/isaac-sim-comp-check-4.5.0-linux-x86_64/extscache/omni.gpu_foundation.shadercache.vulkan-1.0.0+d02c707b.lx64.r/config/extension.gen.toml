@@ -1,0 +1,20 @@
+
+[package]
+    archivePath = "https://d2cerybs4newgl.cloudfront.net/omni.gpu_foundation.shadercache.vulkan-c32ec42cef532fe2.zip"
+
+    [package.publish]
+        kitVersion = "106.5.0+release.162521.d02c707b.gl"
+        date = 1734048468
+        buildNumber = "106.5.0+release.162521.d02c707b.gl"
+
+    [package.target]
+
+        [package.target.config]
+            0 = "release"
+            1 = "debug"
+
+        [package.target.platform]
+            0 = "linux-x86_64"
+
+        [package.target.kitHash]
+            0 = "d02c707b"
