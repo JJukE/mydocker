@@ -2,7 +2,7 @@ Docker Container Setting for RTX 4090 Workstation
 ---
 
 Workstation environment:
-* Driver: 550.142
+* Driver: 535.161.07
 
 #### 1. Clone Isaac Lab container repository, pull and build it
 ```bash
