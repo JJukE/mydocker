@@ -1,0 +1,1 @@
+docker pull $IMG_NVDA # find CUDA version at https://isaac-sim.github.io/IsaacLab/main/source/deployment/docker.html (e.g., nvcr.io/nvidia/isaac-lab:2.3.2)
