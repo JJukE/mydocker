@@ -28,18 +28,15 @@ RUN apt install -y --no-install-recommends \
     subversion
 ENV PATH /opt/conda/bin:$PATH
 # set version(Filename) and proper sha256(SHA256) from https://repo.anaconda.com/miniconda/
-ARG CONDA_VERSION=py39_24.3.0-0
+ARG CONDA_VERSION=py311_26.1.1-1
 RUN set -x && \
     UNAME_M="$(uname -m)" && \
     if [ "${UNAME_M}" = "x86_64" ]; then \
     MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh"; \
-    SHA256SUM="1c3d44e987dc56c7d8954419fa1a078be5ddbc293d8cb98b184a23f9a270faad"; \
-    elif [ "${UNAME_M}" = "s390x" ]; then \
-    MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-${CONDA_VERSION}-Linux-s390x.sh"; \
-    SHA256SUM="1570e27adba2dcc24b182c21cd4e793ab5719aa5b1f7f8e29c16ec74d6d9a16f"; \
+    SHA256SUM="52d1f19154b0716d7dc0872f0d858702640da08a4e53fd0035ba988608203d6b"; \
     elif [ "${UNAME_M}" = "aarch64" ]; then \
     MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-${CONDA_VERSION}-Linux-aarch64.sh"; \
-    SHA256SUM="860f532a33501cf0eccc2677048e21db4a12151938d181821af3e5d30e2dc390"; \
+    SHA256SUM="1726ea55308160a32e82d90a6f4914caa46f58fe157442224f2faf92fdef1e0e"; \
     fi && \
     wget "${MINICONDA_URL}" -O miniconda.sh -q && \
     echo "${SHA256SUM} miniconda.sh" > shasum && \
@@ -53,6 +50,9 @@ RUN set -x && \
     find /opt/conda/ -follow -type f -name '*.a' -delete && \
     find /opt/conda/ -follow -type f -name '*.js.map' -delete && \
     /opt/conda/bin/conda clean -afy
+# Accept Anaconda's Terms of Service for py311_26.1.1-1 version
+RUN conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main && \
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
 
 # @option: SSH server
 RUN apt install -y --no-install-recommends openssh-server
