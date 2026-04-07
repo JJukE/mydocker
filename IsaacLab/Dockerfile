@@ -60,6 +60,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Install zenity for GUI dialogs for Isaac Sim
+RUN apt update && apt install -y --no-install-recommends zenity
+
 # SSH Configuration
 RUN echo 'PASS_MIN_LEN 8' >> /etc/login.defs && \
     echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
