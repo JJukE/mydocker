@@ -11,6 +11,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && apt-get install -y --no-install-recommends \
     nano tmux wget iputils-ping git g++ build-essential net-tools curl zip unzip ffmpeg \
     openssh-server libpam-pwquality bash-completion \
+    libhidapi-hidraw0 libhidapi-libusb0 \
     bzip2 ca-certificates libglib2.0-0 libsm6 libxext6 libxrender1 mercurial openssh-client procps subversion && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -55,7 +56,7 @@ RUN conda tos accept --override-channels --channel https://repo.anaconda.com/pkg
 
 # Install software and SSH utilities (Consolidated to reduce layers)
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    nano tmux wget iputils-ping git g++ net-tools curl zip unzip ffmpeg \
+    nano tmux wget iputils-ping git g++ net-tools curl zip unzip ffmpeg tree \
     openssh-server libpam-pwquality bash-completion && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
