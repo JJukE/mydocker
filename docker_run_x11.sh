@@ -14,6 +14,7 @@ docker run --gpus all -id \
 -v $VOL_DEV \
 -v $VOL_DATA \
 -v $VOL_HDD \
+-v $VOL_ETC \
 -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
 -e DISPLAY=$DISPLAY \
 --ipc host \

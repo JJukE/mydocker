@@ -8,6 +8,7 @@ docker run --gpus all -id \
 -v $VOL_MINE2 \
 -v $VOL_MINE3 \
 -v $VOL_DEV \
+-v $VOL_ETC \
 --ipc host \
 --restart unless-stopped \
 -p $PORT_TB:6006 \
