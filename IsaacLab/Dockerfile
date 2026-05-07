@@ -75,6 +75,10 @@ RUN echo "alias python='/isaac-sim/python.sh'" >> /root/.bashrc && \
 # Align working directory
 WORKDIR /root/dev
 
+# bun for connecting claude code with telegram
+RUN curl -fsSL https://bun.sh/install | bash
+RUN source ~/.bashrc
+
 # Entry script setup
 COPY entry.sh /entry.sh
 RUN chmod +x /entry.sh

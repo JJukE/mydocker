@@ -74,6 +74,10 @@ RUN echo 'conda activate' >> /root/.bashrc
 
 WORKDIR /root/dev
 
+# bun for connecting claude code with telegram
+RUN curl -fsSL https://bun.sh/install | bash
+RUN source ~/.bashrc
+
 # entry script
 COPY entry.sh /entry.sh
 RUN chmod +x /entry.sh
