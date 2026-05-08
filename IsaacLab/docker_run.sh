@@ -8,7 +8,7 @@
 xhost +
 
 docker run --gpus all -id \
---security-opt=no-new-privileges \
+--security-opt seccomp=unconfined \
 --name $CONT_NAME \
 -e NVIDIA_VISIBLE_DEVICES=all \
 -e NVIDIA_DRIVER_CAPABILITIES=all \
@@ -36,7 +36,7 @@ docker run --gpus all -id \
 -v $VOL_MINE2 \
 -v $VOL_MINE3 \
 -v $VOL_DEV \
--v $VOL_ETC \
+${VOL_ETC:+-v $VOL_ETC} \
 --ipc host \
 --restart unless-stopped \
 -p $PORT_TB:6006 \
