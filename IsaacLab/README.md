@@ -40,3 +40,22 @@ Specify your preference with the environment variables:
 - PORT_JUP_: The second port number of the jupyter (8889)
 - IMG_NAME: Name of the image you built above
 
+#### for non-GUI setting
+
+```bash
+bash docker_run_nonGUI.sh
+```
+
+If `docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error mounting "[home_path]/.Xauthority" to rootfs at "/root/.Xauthority": mount [home_path]/.Xauthority:/root/.Xauthority (via /proc/self/fd/6), flags: 0x5000: not a directory: unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type.` occurs because the docker image is configured in GUI-including workstation:
+```bash
+# ls -al [home_path]
+# for example, if the home_path is `/home/sangjune/`,
+rm -rf [home_path]/.Xauthority # ex) rm -rf /home/sangjune/.Xauthority
+touch [home_path]/.Xauthority # ex) touch /home/sangjune/.Xauthority
+
+# and rerun the docker
+docker stop $CONT_NAME && docker rm $CONT_NAME
+bash docker_run_nonGUI.sh
+```
+
+
