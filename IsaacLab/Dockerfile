@@ -75,6 +75,9 @@ RUN echo "alias python='/isaac-sim/python.sh'" >> /root/.bashrc && \
 # Align working directory
 WORKDIR /root/dev
 
+# to avoid Gtk WARNING and CRITICAL when running Isaac Sim
+ENV GTK_A11Y=none
+
 # bun for connecting claude code with telegram
 RUN curl -fsSL https://bun.sh/install | bash
 RUN source ~/.bashrc
