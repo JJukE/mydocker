@@ -7,6 +7,9 @@ docker run --gpus all -id \
 -v $VOL_RVI2 \
 -v $VOL_MINE2 \
 -v $VOL_MINE3 \
+${VOL_RVI3:+-v $VOL_RVI3} \
+${VOL_MINE4:+-v $VOL_MINE4} \
+${VOL_RVI4:+-v $VOL_RVI4} \
 -v $VOL_DEV \
 ${VOL_ETC:+-v $VOL_ETC} \
 --ipc host \
